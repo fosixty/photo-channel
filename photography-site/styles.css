@@ -1,0 +1,208 @@
+
+/* Wii Photo Channel: Enhanced Theme */
+body {
+	min-height: 100vh;
+	background: linear-gradient(135deg, #e0f6ff 0%, #b2e2f2 60%, #a6e3d8 100%);
+	font-family: 'Segoe UI', 'Arial Rounded MT Bold', 'Arial', sans-serif;
+	color: #2a3a4a;
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+}
+
+header, h1, h2, h3 {
+	color: #1a6ca3;
+	text-align: center;
+	margin-top: 24px;
+	margin-bottom: 16px;
+	text-shadow: 0 2px 12px #b2e2f2, 0 1px 0 #fff;
+	letter-spacing: 0.04em;
+}
+
+.gallery {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 40px 36px;
+	margin: 48px auto 60px auto;
+	max-width: 1300px;
+	padding: 0 16px;
+}
+
+.photo-tile {
+	background: linear-gradient(145deg, #f8fff8 60%, #d6f6e7 100%);
+	border-radius: 32px;
+	box-shadow: 0 8px 32px 0 rgba(60, 120, 180, 0.18), 0 2px 0 #b2e2f2 inset;
+	padding: 20px 20px 14px 20px;
+	border: 2.5px solid #b2e2f2;
+	width: 240px;
+	text-align: center;
+	position: relative;
+	transition: transform 0.22s cubic-bezier(.22,1.61,.36,1), box-shadow 0.22s;
+	overflow: hidden;
+	z-index: 1;
+	animation: floaty 3.5s ease-in-out infinite alternate;
+}
+
+@keyframes floaty {
+	0% { transform: translateY(0) scale(1); }
+	100% { transform: translateY(-10px) scale(1.03); }
+}
+
+.photo-tile:hover {
+	transform: scale(1.07) rotate(-2deg);
+	box-shadow: 0 16px 48px 0 rgba(60, 120, 180, 0.22), 0 2px 0 #1a6ca3 inset;
+	border-color: #1a6ca3;
+	z-index: 2;
+}
+
+.photo-tile img {
+	width: 200px;
+	height: 150px;
+	object-fit: cover;
+	border-radius: 20px;
+	border: 2.5px solid #b2e2f2;
+	background: #e0f6ff;
+	margin-bottom: 12px;
+	box-shadow: 0 2px 12px #b2e2f2;
+	transition: box-shadow 0.2s;
+}
+
+.photo-tile:hover img {
+	box-shadow: 0 6px 24px #1a6ca3;
+}
+
+.photo-tile figcaption {
+	font-size: 1.15em;
+	color: #1a6ca3;
+	font-weight: bold;
+	letter-spacing: 0.03em;
+	margin-top: 4px;
+	text-shadow: 0 1px 0 #fff, 0 2px 8px #b2e2f2;
+}
+
+button, .wii-btn, .btn {
+	background: linear-gradient(180deg, #b2e2f2 0%, #6fd3b7 100%);
+	color: #1a6ca3;
+	border: none;
+	border-radius: 18px;
+	padding: 12px 32px;
+	font-size: 1.15em;
+	font-weight: bold;
+	box-shadow: 0 2px 12px rgba(60, 120, 180, 0.13);
+	cursor: pointer;
+	margin: 10px 8px;
+	transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.15s;
+	outline: none;
+	border-bottom: 3px solid #1a6ca3;
+	position: relative;
+	overflow: hidden;
+}
+
+button:active, .wii-btn:active, .btn:active {
+	transform: scale(0.97);
+	box-shadow: 0 1px 4px rgba(60, 120, 180, 0.10);
+}
+
+button:hover, .wii-btn:hover, .btn:hover {
+	background: linear-gradient(180deg, #6fd3b7 0%, #b2e2f2 100%);
+	color: #0b3c5d;
+	box-shadow: 0 4px 18px #6fd3b7;
+}
+
+.btn--secondary {
+	background: linear-gradient(180deg, #fff 0%, #b2e2f2 100%);
+	color: #1a6ca3;
+	border-bottom: 3px solid #6fd3b7;
+}
+
+.btn--secondary:hover {
+	background: linear-gradient(180deg, #b2e2f2 0%, #fff 100%);
+	color: #0b3c5d;
+}
+
+.section__head span {
+	display: block;
+	color: #6fd3b7;
+	font-size: 1.1em;
+	margin-bottom: 10px;
+	text-shadow: 0 1px 0 #fff;
+}
+
+footer {
+	text-align: center;
+	color: #1a6ca3;
+	background: rgba(224, 246, 255, 0.95);
+	padding: 22px 0 14px 0;
+	font-size: 1.08em;
+	border-top: 2.5px solid #b2e2f2;
+	margin-top: 60px;
+	box-shadow: 0 -2px 16px #b2e2f2;
+}
+
+.dot {
+	color: #6fd3b7;
+	margin: 0 8px;
+	font-size: 1.2em;
+}
+
+/* Glassy floating channel bar */
+.channel__top, .channel__mid {
+	background: rgba(255,255,255,0.85);
+	border-radius: 32px;
+	box-shadow: 0 4px 32px #b2e2f2;
+	margin: 0 auto 24px auto;
+	padding: 24px 32px 18px 32px;
+	max-width: 900px;
+	position: relative;
+	border: 2px solid #b2e2f2;
+	backdrop-filter: blur(2.5px);
+}
+
+.pill {
+	display: inline-block;
+	background: linear-gradient(90deg, #6fd3b7 0%, #b2e2f2 100%);
+	color: #fff;
+	font-weight: bold;
+	border-radius: 18px;
+	padding: 7px 22px;
+	font-size: 1.08em;
+	margin: 18px 0 0 0;
+	box-shadow: 0 2px 8px #b2e2f2;
+	letter-spacing: 0.04em;
+	border-bottom: 2px solid #1a6ca3;
+}
+
+/* Panel and about/contact sections */
+.panel {
+	background: linear-gradient(120deg, #f8fff8 60%, #e0f6ff 100%);
+	border-radius: 24px;
+	box-shadow: 0 2px 12px #b2e2f2;
+	padding: 24px 32px;
+	margin: 24px auto;
+	max-width: 600px;
+	border: 2px solid #b2e2f2;
+}
+
+.specs {
+	color: #1a6ca3;
+	font-size: 1.05em;
+	margin-top: 10px;
+}
+
+.contact a {
+	color: #6fd3b7;
+	text-decoration: none;
+	font-weight: bold;
+	transition: color 0.2s;
+}
+.contact a:hover {
+	color: #1a6ca3;
+	text-decoration: underline;
+}
+
+.note {
+	color: #b2e2f2;
+	font-size: 0.98em;
+	margin-top: 8px;
+}
