@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Photo Channel</title>
+  <meta name="description" content="Photo portfolio + booking." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="wrap">
+    <header class="channel" id="top">
+      <div class="channel__top">
+        <div class="brand">
+          <div class="title">
+            <h1>Photo Channel</h1>
+          </div>
+        </div>
+
+        <div class="pill">Marietta, GA</div>
+      </div>
+
+      <div class="channel__mid">
+        <!-- “Pinned snapshots” strip -->
+        <div class="strip" aria-hidden="true">
+          <div class="snap snap--a">
+            <div class="snap__paper">
+              <div class="snap__img" style="background-image: url('images/people.jpg');"></div>
+              <div class="snap__cap">portraits</div>
+            </div>
+            <span class="pin"></span>
+          </div>
+
+          <div class="snap snap--b">
+            <div class="snap__paper">
+              <div class="snap__img" style="background-image: url('images/live.jpg');"></div>
+              <div class="snap__cap">live</div>
+            </div>
+            <span class="pin"></span>
+          </div>
+
+          <div class="snap snap--c">
+            <div class="snap__paper">
+              <div class="snap__img" style="background-image: url('images/gear.jpg');"></div>
+              <div class="snap__cap">gear</div>
+            </div>
+            <span class="pin"></span>
+          </div>
+        </div>
+
+        <p class="desc">
+          
+        </p>
+
+        <nav class="buttons" aria-label="Primary">
+          <a class="btn" href="#portfolio">
+            <span class="btn__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="16" rx="3"/>
+                <path d="M7 14l2-2 3 3 4-5 3 4"/>
+              </svg>
+            </span>
+            Portfolio
+          </a>
+
+          <!-- Replace with your Google Form link -->
+          <a class="btn btn--secondary" href="YOUR_GOOGLE_FORM_LINK_HERE" target="_blank" rel="noopener">
+            <span class="btn__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 7h8M8 11h8M8 15h5"/>
+                <path d="M6 3h9l3 3v15a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/>
+              </svg>
+            </span>
+            Book / Request Quote
+          </a>
+
+          
+        </nav>
+      </div>
+
+      <div class="grid" id="about">
+        <section class="panel">
+          <h2>About</h2>
+          <p>
+            I specialize in photography for individuals, artists, and brands, including live music coverage and detailed product or apparel visuals.
+          </p>
+          <div class="specs">
+            <strong>Gear:</strong> Nikon DSLR system with prime and zoom lenses.
+          </div>
+        </section>
+
+        <section class="panel">
+          <h2>Contact</h2>
+          <p>
+            Use the booking form for fastest response. For quick questions:
+          </p>
+          <p class="contact">
+            IG: <a href="https://instagram.com/gingholland" target="_blank" rel="noopener">@Gingholland</a>
+          </p>
+          <p class="note">Tip: Add your rates/starting price inside the Google Form if you want.</p>
+        </section>
+      </div>
+    </header>
+
+    <main class="section" id="portfolio">
+      <div class="section__head">
+        <h2>Portfolio</h2>
+        <span></span>
+      </div>
+
+      <div class="gallery">
+        <figure class="photo-tile">
+          <img src="images/people2.jpg" alt="Portrait sample" loading="lazy" />
+          <figcaption>People</figcaption>
+        </figure>
+
+        <figure class="photo-tile">
+          <img src="images/live2.jpg" alt="Live music sample" loading="lazy" />
+          <figcaption>Live Music</figcaption>
+        </figure>
+
+        <figure class="photo-tile">
+          <img src="images/gear2.jpg" alt="Equipment stills sample" loading="lazy" />
+          <figcaption>Equipment Stills</figcaption>
+        </figure>
+
+        <figure class="photo-tile">
+          <img src="images/people3.jpg" alt="Portrait sample 2" loading="lazy" />
+          <figcaption>People</figcaption>
+        </figure>
+
+        <figure class="photo-tile">
+          <img src="images/live3.jpg" alt="Live music sample 2" loading="lazy" />
+          <figcaption>Live Music</figcaption>
+        </figure>
+
+        <figure class="photo-tile">
+          <img src="images/gear3.jpg" alt="Equipment stills sample 2" loading="lazy" />
+          <figcaption>Equipment Stills</figcaption>
+        </figure>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <span>© <span id="y"></span> All Rights Reserved</span>
+      <span class="dot">•</span>
+      <a href="#top">Back to top</a>
+    </footer>
+  </div>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Expanded photo">
+    <button class="lightbox__close" type="button" aria-label="Close">×</button>
+    <img class="lightbox__img" src="" alt="" />
+  </div>
+
+  <!-- optional 1-liner; remove for zero JS -->
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = lightbox.querySelector(".lightbox__img");
+    const lightboxClose = lightbox.querySelector(".lightbox__close");
+
+    const openLightbox = (img) => {
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt || "Expanded photo";
+      lightbox.classList.add("is-open");
+      lightbox.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    };
+
+    const closeLightbox = () => {
+      lightbox.classList.remove("is-open");
+      lightbox.setAttribute("aria-hidden", "true");
+      lightboxImg.src = "";
+      document.body.style.overflow = "";
+    };
+
+    document.querySelectorAll(".photo-tile img").forEach((img) => {
+      img.addEventListener("click", () => openLightbox(img));
+    });
+
+    lightboxClose.addEventListener("click", closeLightbox);
+    lightbox.addEventListener("click", (event) => {
+      if (event.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && lightbox.classList.contains("is-open")) {
+        closeLightbox();
+      }
+    });
+  </script>
+</body>
+</html>
